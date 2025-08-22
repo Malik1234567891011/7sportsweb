@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-navy);
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(14,21,37,0.85) 60%, rgba(14,21,37,0.95) 100%);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.content h1 {
+  font-size: 2.8rem;
+  font-family: 'Manrope', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+
+.content p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2.2rem;
+  color: #f3f3f3;
+}
+
+.ctas {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.ctaPrimary {
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.ctaPrimary:hover {
+  background: var(--red-700);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.ctaSecondary {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-weight: 600;
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  border: 1.5px solid #fff;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.ctaSecondary:hover {
+  background: #fff;
+  color: var(--red);
+}
+
+@media (max-width: 900px) {
+  .content {
+    max-width: 90vw;
+    padding: 1.5rem 0.5rem;
+  }
+  .content h1 {
+    font-size: 2.1rem;
+  }
+  .content p {
+    font-size: 1.05rem;
+  }
+  .ctas {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    padding: 0.9rem 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 70vh;
+    padding-top: 2.5rem;
+  }
+  .content h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .content p {
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
+  .ctas {
+    gap: 0.6rem;
+  }
+}

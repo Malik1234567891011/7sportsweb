@@ -1,0 +1,61 @@
+@layer reset, base, components, utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@700;800&display=swap');
+
+/* ----- reset ----- */
+@layer reset {
+  /* A tiny modern reset */
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body, h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
+  img, picture, video, canvas, svg { display: block; max-width: 100%; }
+  input, button, textarea, select { font: inherit; }
+  :root { color-scheme: light dark; }
+}
+
+/* ----- base (design tokens) ----- */
+@layer base {
+  :root {
+    --bg: #0b1220;           /* deep navy */
+    --panel: #0f1a2b;        /* slightly lighter */
+    --text: #e8ecf3;         /* near-white */
+    --muted: #a8b3c7;
+    --brand: #2f6df6;        /* accent blue */
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(0,0,0,.25);
+    --red: #E42A2A;
+    --red-700: #C51F1F;
+    --red-900: #8F1515;
+    --bg-navy: #0E1525;
+    --bg-off: #F7F8FA;
+    --panel: #FFFFFF;
+    --text: #0D1321;
+    --muted: #6B7280;
+    --accent: #2563EB;
+    --success: #16A34A;
+    --radius: 16px;
+    --shadow: 0 12px 28px rgba(0,0,0,.18);
+  }
+  body {
+    background: var(--bg-off);
+    color: var(--text);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  .container { width: min(1120px, 92%); margin-inline: auto; }
+  h1, h2, h3, h4 {
+    font-family: 'Manrope', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  button, .btn {
+    font-family: inherit;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+}
